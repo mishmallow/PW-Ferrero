@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Ferrero</title>
+    <meta name="description" content="Questa pagina è dedicata al report di sostenibilità di Ferrero" />
+    <meta name="keywords" content="Ferrero, sostenibilità" />
+    <meta name="author" content="Michelle Ravagnan"/>
+
+    <link rel="stylesheet" href="style.css" media="handheld, screen"/>
+    <link rel="shortcut icon" type="image/png" href="imgs/logo0.png"/>
+
+
+</head>
+<body>
+<main>
+<div class="page">
+    <div class="left-section">
+      <img src="imgs/cocoa-bean.jpeg" alt="A cacao bean" class="main-image">
+    </div>
+    
+    <div class="right-section-ingredients">
+      <h2 class="section-title">Sourcing Ingredients Sustainably</h2>
+      <div class="divider"></div>
+      
+      <section class="achievements">
+        <h3>Key achievements</h3>
+        <ul class="achievement-list">
+          <li>Absolute emission reduction of Scope 1 and Scope 2 while increasing production</li>
+          <li>Continued expansion of self-generated renewable electricity</li>
+          <li>Continued decrease in water consumption ratio</li>
+          <li>Continued decrease in waste production ratio</li>
+          <li>Multiple pilots in decarbonising transportation in Europe</li>
+          <li>Reduced the amount of virgin plastic by redesigning our Ferrero Rocher 24-piece box produced in Europe</li>
+        </ul>
+      </section>
+      
+      <section class="material-issues">
+        <h3>This pillar relates to the following material issues</h3>
+        <ul class="issues-list two-column">
+          <li>Climate action</li>
+          <li>Plastic and packaging</li>
+          <li>Water management</li>
+          <li>Industrial and food waste</li>
+          <li>Corporate advocacy and industry collaboration</li>
+        </ul>
+      </section>
+      
+      <section class="sdgs">
+        <h3>How we align with the SDGs</h3>
+        <div class="sdg-icons">
+          <img src="imgs/sdg-poverty.png" alt="SDG Poverty" class="sdg-icon">
+          <img src="imgs/sdg-hunger.png" alt="SDG Hunger" class="sdg-icon">
+          <img src="imgs/sdg-health.png" alt="SDG Health" class="sdg-icon">
+          <img src="imgs/sdg-education.png" alt="SDG Hunger" class="sdg-icon">
+          <img src="imgs/sdg-gender.png" alt="SDG Gender Equality" class="sdg-icon">
+          <img src="imgs/sdg-work.png" alt="SDG Work dignity" class="sdg-icon">
+          <img src="imgs/sdg-production.png" alt="SDG Responsible Consumption and Production" class="sdg-icon">
+          <img src="imgs/sdg-water.png" alt="SDG Water" class="sdg-icon">
+          <img src="imgs/sdg-energy.png" alt="SDG Energy" class="sdg-icon">
+          <img src="imgs/sdg-climate.png" alt="SDG Climate Action" class="sdg-icon">
+          <img src="imgs/sdg-land.png" alt="SDG Life on Land" class="sdg-icon">
+        </div>
+      </section>
+      
+      <div class="download-section">
+        <a href="downloads/environment-report.pdf" class="download-button">Download Full Report</a>
+      </div>
+    </div>
+  </div>
+  
+  <nav class="page-navigation">
+    <a href="home.html" class="prev-page"><span class="arrow">←</span></a>
+    <div class="page-links">
+      <a href="home.html">HOME</a>
+      <a href="environment.html">ENVIRONMENT</a>
+      <a href="ingredients.html"class="active">INGREDIENTS</a>
+      <a href="people.html">PEOPLE</a>
+      <a href="consumption.html">CONSUMPTION</a>
+    </div>
+    <a href="ingredients.html" class="next-page"><span class="arrow">→</span></a>
+  </nav>
+
+  <script>
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('.page-links a');
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+
+    const prevLink = document.querySelector('.prev-page');
+    const nextLink = document.querySelector('.next-page');
+    
+
+    if (currentPage === 'home.html') {
+      prevLink.href = 'consumption.html';
+      nextLink.href = 'environment.html';
+    } else if (currentPage === 'environment.html') {
+      prevLink.href = 'home.html';
+      nextLink.href = 'ingredients.html';
+    } else if (currentPage === 'ingredients.html') {
+      prevLink.href = 'environment.html';
+      nextLink.href = 'people.html';
+    } else if (currentPage === 'consumption.html') {
+      prevLink.href = 'people.html';
+      nextLink.href = 'home.html';
+    } else if (currentPage === 'people.html') {
+      prevLink.href = 'ingredients.html';
+      nextLink.href = 'consumption.html';
+    }
+  </script>
+  </main>
+</body>
+
+
+
+
