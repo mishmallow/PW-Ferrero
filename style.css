@@ -276,7 +276,7 @@ p, h1, h2, h3, ul, ol, dl {
 .page {
   display: flex;
   flex-direction: row;
-  min-height: 80vh;
+  min-height: 95vh;
   background-color: #fff;
 }
 
