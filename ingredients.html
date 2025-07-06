@@ -37,7 +37,15 @@
       </section>
       
       <section class="analisi">
+        <div class="header-container">
         <h3>Analisi</h3>
+
+        <button class="btn toggle-btn" onclick="toggleParagraph()">
+          <div class="toggle-text" id="toggleText">▼</div>
+        </button>
+        </div>
+
+        <div id="hiddenText" class="hidden-paragraph">
         <p>
           Ferrero adotta un approccio mirato alla rigenerazione degli ecosistemi e alla tutela delle risorse naturali lungo le sue filiere agricole. <br>
           L’azienda si impegna su diversi fronti per <strong>contrastare la deforestazione e promuovere pratiche di produzione sostenibile</strong>: dall’agricoltura rigenerativa per le nocciole, all’agroforestazione per il cacao, fino a soluzioni basate sulla natura per la filiera dell’olio di palma.<br>
@@ -63,6 +71,26 @@
           Ferrero dimostra un impegno solido e articolato nella gestione sostenibile degli ingredienti, con una visione che integra aspetti ambientali, sociali e di governance (ESG). <br>
           L’azienda non si limita a rispettare le normative, ma punta a guidare il cambiamento attraverso innovazione, trasparenza e collaborazioni strategiche. Questo modello di approvvigionamento garantisce non solo la qualità dei prodotti, ma contribuisce anche alla rigenerazione degli ecosistemi e al progresso delle comunità coinvolte.
         </p>
+                <script>
+        function showParagraph() {
+            const paragraph = document.getElementById('hiddenText');
+            paragraph.classList.add('show');
+        }
+        
+        function toggleParagraph() {
+            const paragraph = document.getElementById('hiddenText');
+            const toggleText = document.getElementById('toggleText');
+            paragraph.classList.toggle('show');
+
+            // Cambia il testo nel bottone
+            if (paragraph.classList.contains('show')) {
+                toggleText.textContent = '▲';
+            } else {
+                toggleText.textContent = '▼';
+            }
+
+        }
+        </script>
       </section>
       
       <section class="sdgs">

@@ -37,7 +37,15 @@
       </section>
       
       <section class="analisi">
+        <div class="header-container">
         <h3>Analisi</h3>
+
+        <button class="btn toggle-btn" onclick="toggleParagraph()">
+          <div class="toggle-text" id="toggleText">▼</div>
+        </button>
+        </div>
+
+        <div id="hiddenText" class="hidden-paragraph">
         <p>
           Nel quindicesimo rapporto di sostenibilità, Ferrero offre un quadro chiaro di ciò che significa investire nelle persone per un’impresa globale. Non solo dal punto di vista economico o produttivo, ma soprattutto come scelta culturale e sociale che valorizza la dignità, il potenziale e l’unicità di ogni individuo.
         </p>
@@ -64,7 +72,26 @@
         <p>
           L’impegno di Ferrero verso le persone è profondo e articolato. Dalla sicurezza sul lavoro alla promozione dell’inclusione, dalla formazione al supporto delle comunità agricole, ogni iniziativa riflette la convinzione che le persone siano il motore principale del cambiamento. In un contesto globale frammentato, questa visione restituisce valore al lavoro e responsabilità all’impresa, ricordandoci che la sostenibilità è prima di tutto una questione umana.
         </p>
+                <script>
+        function showParagraph() {
+            const paragraph = document.getElementById('hiddenText');
+            paragraph.classList.add('show');
+        }
+        
+        function toggleParagraph() {
+            const paragraph = document.getElementById('hiddenText');
+            const toggleText = document.getElementById('toggleText');
+            paragraph.classList.toggle('show');
 
+            // Cambia il testo nel bottone
+            if (paragraph.classList.contains('show')) {
+                toggleText.textContent = '▲';
+            } else {
+                toggleText.textContent = '▼';
+            }
+
+        }
+        </script>
       </section>
       
       <section class="sdgs">

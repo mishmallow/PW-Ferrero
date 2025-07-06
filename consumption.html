@@ -35,7 +35,15 @@
       </section>
 
       <section class="analisi">
+        <div class="header-container">
         <h3>Analisi</h3>
+
+        <button class="btn toggle-btn" onclick="toggleParagraph()">
+          <div class="toggle-text" id="toggleText">▼</div>
+        </button>
+        </div>
+
+        <div id="hiddenText" class="hidden-paragraph">
         <p>
           Nel Report di sostenibilitá 2023 viene esplorato il tema del consumo attraverso una prospettiva che intreccia etica e responsabilità, valori centrali per l’azienda.<br>
           L’idea di consumo, infatti, si estende oltre il semplice rapporto tra prodotto e consumatore, delineando una filosofia che promuove un’interazione consapevole tra marchio, prodotto e stile di vita.<br>
@@ -56,6 +64,26 @@
           Infine, Ferrero si distingue non solo per la produzione di beni di consumo, ma anche per la promozione di un nuovo paradigma culturale basato su educazione, consapevolezza, rispetto e fiducia.<br>
           Questo impegno richiede collaborazione con le istituzioni e un dialogo continuo con i consumatori, ma si rivela una scelta strategica essenziale per coniugare crescita economica e responsabilità sociale, valori che sono al cuore della visione dell’azienda.
         </p>
+                <script>
+        function showParagraph() {
+            const paragraph = document.getElementById('hiddenText');
+            paragraph.classList.add('show');
+        }
+        
+        function toggleParagraph() {
+            const paragraph = document.getElementById('hiddenText');
+            const toggleText = document.getElementById('toggleText');
+            paragraph.classList.toggle('show');
+
+            // Cambia il testo nel bottone
+            if (paragraph.classList.contains('show')) {
+                toggleText.textContent = '▲';
+            } else {
+                toggleText.textContent = '▼';
+            }
+
+        }
+        </script>
       </section>
       
       <section class="sdgs">
