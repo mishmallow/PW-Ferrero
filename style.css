@@ -457,7 +457,74 @@ h3 {
   flex-direction: column;
 }
 
+/* Hide/Show paragaph */
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+        
+.header-container h3 {
+  margin: 0;      
+  font-weight: 600;
+  color: #d4af37;
+  }
 
+.btn {
+  background-color: #6c757d;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+.btn:hover {
+  background-color: #6c757d;
+  }
+        
+.btn:active {
+  transform: scale(0.98);
+  }
+        
+.hidden-paragraph {
+  display: none;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border-left: 4px solid #e6c550;
+  animation: fadeIn 0.5s ease-in;
+  }
+        
+.hidden-paragraph.show {
+  display: block;
+  }
+        
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+  }
+        
+.toggle-btn {
+  background-color: #e6c550;
+  margin-left: 10px;
+  }
+        
+.toggle-btn:hover {
+  background-color: #d9ad0e;
+  }
+
+
+
+   
 /* Responsive Styles */
 @media screen and (max-width: 1024px) {
   body {

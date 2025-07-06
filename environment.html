@@ -37,7 +37,16 @@
       </section>
       
       <section class="analisi">
+        <div class="header-container">
         <h3>Analisi</h3>
+
+        <button class="btn toggle-btn" onclick="toggleParagraph()">
+          <div class="toggle-text" id="toggleText">▼</div>
+        </button>
+        </div>
+
+        <div id="hiddenText" class="hidden-paragraph">
+
         <p>
           Nel Ferrero Sustainability Report 2023, la protezione dell’ambiente è identificata come uno dei capisaldi della strategia di sostenibilità del Gruppo. <br>
           L'approccio dell’azienda si basa su principi scientifici, un’attenzione alla riduzione degli impatti lungo l’intera filiera e un impegno tangibile per affrontare sfide cruciali quali il <strong>cambiamento climatico, la scarsità di risorse idriche e la gestione dei rifiuti</strong>.
@@ -64,8 +73,29 @@
         <p>
           Per Ferrero, la tutela dell’ambiente non è un tema collaterale, ma un elemento cardine per garantire la resilienza dell’impresa e il benessere delle generazioni future. Attraverso un approccio trasparente e basato su dati scientifici, l'azienda si distingue per la volontà di innovare e collaborare, divenendo un punto di riferimento nell’industria alimentare a livello globale.
         </p>
+        </div>
+        <script>
+        function showParagraph() {
+            const paragraph = document.getElementById('hiddenText');
+            paragraph.classList.add('show');
+        }
+        
+        function toggleParagraph() {
+            const paragraph = document.getElementById('hiddenText');
+            const toggleText = document.getElementById('toggleText');
+            paragraph.classList.toggle('show');
+
+            // Cambia il testo nel bottone
+            if (paragraph.classList.contains('show')) {
+                toggleText.textContent = '▲';
+            } else {
+                toggleText.textContent = '▼';
+            }
+
+        }
+        </script>
+
         </section>
-      
       <section class="sdgs">
         <h3>Come ci allineiamo agli Obiettivi di Sviluppo Sostenibile (SDG).</h3>
         <div class="sdg-icons">
