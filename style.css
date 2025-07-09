@@ -251,6 +251,7 @@ main {
   flex-direction: column;
   margin: 0;
   padding: 0;
+  height: 100vh;
 }
 
 .ferrero-banner {
@@ -276,7 +277,7 @@ p, h1, h2, h3, ul, ol, dl {
 .page {
   display: flex;
   flex-direction: row;
-  min-height: 95vh;
+  height: 100%;
   background-color: #fff;
 }
 
@@ -289,6 +290,7 @@ p, h1, h2, h3, ul, ol, dl {
 
 .main-image {
   width: 100%;
+  max-height: 95vh;
   height: 100%;
   object-fit: cover;
   display: block;
@@ -425,7 +427,6 @@ h3 {
 
 /*INGREDIENTS*/
 
-/*I only have to change the actuall divs that i want different*/
 .right-section-ingredients {
   flex: 1;
   background-color: #3d2314;
@@ -494,12 +495,13 @@ h3 {
         
 .btn:active {
   transform: scale(0.98);
-  }
-        
+  }  
+
 .hidden-paragraph {
-  display: none;
-  padding: 20px;
-  margin-top: 20px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 5px;
   border-left: 4px solid #e6c550;
   animation: fadeIn 0.5s ease-in;
@@ -507,6 +509,9 @@ h3 {
         
 .hidden-paragraph.show {
   display: block;
+  opacity: 1;
+  max-height: 1000px; /* Valore alto per permettere espansione */
+  padding: 20px;
   }
         
 @keyframes fadeIn {
@@ -614,4 +619,9 @@ h3 {
     height: auto;
     overflow: visible;
   }
+}
+
+.max-height {
+  height: 100%;
+  overflow-y: auto;
 }
