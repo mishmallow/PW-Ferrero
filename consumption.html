@@ -1,3 +1,4 @@
+<!-- PAGINA CONSUMO: Struttura base identica alle altre sezioni -->
 <!DOCTYPE html>
 
 <html lang="it">
@@ -16,15 +17,19 @@
 </head>
 <body>
 <main>
+<!-- LAYOUT A DUE COLONNE: Immagine + Contenuto -->
 <div class="page">
+<!-- COLONNA SINISTRA: Immagine rappresentativa -->
     <div class="left-section">
+      <!-- Immagine cacao -->
       <img src="imgs/consumption-choco.png" alt="A hand covered in chocolate" class="main-image">
     </div>
-    
+    <!-- COLONNA DESTRA: Contenuto testuale e interattivo -->
     <div class="right-section right-section-consumption">
+      <!-- TITOLO SEZIONE -->
       <h2 class="section-title">Consumo Responsabile</h2>
       <div class="divider"></div>
-      
+      <!-- SEZIONE PUNTI CHIAVE: Lista dei temi principali -->
       <section class="achievements">
         <h3>Punti Chiave</h3>
         <ul class="achievement-list">
@@ -33,16 +38,18 @@
           <li>Comunicazione responsabile</li>
         </ul>
       </section>
-
+      <!-- SEZIONE ANALISI: Contenuto espandibile/comprimibile -->
       <section class="analisi">
+        <!-- Header con bottone toggle -->
         <div class="header-container">
         <h3>Analisi</h3>
-
+        <!-- Bottone per espandere/comprimere il testo -->
         <button class="btn toggle-btn" onclick="toggleParagraph()">
+          <!-- Indicatore visivo dello stato (freccia giù/su) -->
           <div class="toggle-text" id="toggleText">▼</div>
         </button>
         </div>
-
+        <!-- CONTENUTO NASCOSTO: Testo inizialmente nascosto -->
         <div id="hiddenText" class="hidden-paragraph">
         <p>
           Nel Report di sostenibilitá 2023 viene esplorato il tema del consumo attraverso una prospettiva che intreccia etica e responsabilità, valori centrali per l’azienda.<br>
@@ -65,6 +72,7 @@
           Questo impegno richiede collaborazione con le istituzioni e un dialogo continuo con i consumatori, ma si rivela una scelta strategica essenziale per coniugare crescita economica e responsabilità sociale, valori che sono al cuore della visione dell’azienda.
         </p>
         </div>
+        <!-- JAVASCRIPT INLINE: Funzioni per gestire l'espansione del testo -->
         <script>
         function showParagraph() {
             const paragraph = document.getElementById('hiddenText');
@@ -74,34 +82,40 @@
         function toggleParagraph() {
             const paragraph = document.getElementById('hiddenText');
             const toggleText = document.getElementById('toggleText');
+            // Aggiunge/rimuove la classe 'show' per mostrare/nascondere
             paragraph.classList.toggle('show');
 
-            // Cambia il testo nel bottone
+            // Cambia l'icona del bottone in base allo stato
             if (paragraph.classList.contains('show')) {
-                toggleText.textContent = '▲';
+                toggleText.textContent = '▲';// Freccia su = espanso
             } else {
-                toggleText.textContent = '▼';
+                toggleText.textContent = '▼';// Freccia giù = compresso
             }
 
         }
         </script>
       </section>
+      <!-- SEZIONE SDG: Obiettivi di Sviluppo Sostenibile -->
       <section class="sdgs">
         <h3>Come ci allineiamo agli Obiettivi di Sviluppo Sostenibile (SDG)</h3>
+        <!-- Container per le icone SDG -->
         <div class="sdg-icons">
+          <!-- Serie di icone rappresentanti gli SDG -->
           <img src="imgs/sdg-health.png" alt="SDG Health" class="sdg-icon">
           <img src="imgs/sdg-production.png" alt="SDG Responsible Consumption and Production" class="sdg-icon">
         </div>
       </section>
-      
+      <!-- SEZIONE DOWNLOAD: Link per scaricare il report completo -->
       <div class="download-section">
-        <a href="downloads/environment-report.pdf" class="download-button">Download Report Completo</a>
+        <a href="downloads/environment-report.pdf" class="download-button"> Download Report Completo </a>
       </div>
     </div>
   </div>
-  
+  <!-- NAVIGAZIONE TRA PAGINE: Menu fisso in fondo -->
   <nav class="page-navigation">
+    <!-- Link pagina precedente -->
     <a href="home.html" class="prev-page"><span class="arrow">←</span></a>
+    <!-- Menu centrale con tutte le pagine -->
     <div class="page-links">
       <a href="home.html">HOME</a>
       <a href="environment.html">AMBIENTE</a>
@@ -109,23 +123,25 @@
       <a href="people.html">PERSONE</a>
       <a href="consumption.html"class="active">CONSUMO</a>
     </div>
+    <!-- Link pagina successiva -->
     <a href="ingredients.html" class="next-page"><span class="arrow">→</span></a>
   </nav>
-
+  <!-- JAVASCRIPT: Gestione dinamica della navigazione -->
   <script>
+    // Ottiene il nome del file corrente dall'URL
     const currentPage = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('.page-links a');
-
+    // Evidenzia il link della pagina corrente
     navLinks.forEach(link => {
       if (link.getAttribute('href') === currentPage) {
         link.classList.add('active');
       }
     });
-
+    // Riferimenti ai bottoni prev/next
     const prevLink = document.querySelector('.prev-page');
     const nextLink = document.querySelector('.next-page');
     
-
+    // LOGICA NAVIGAZIONE CIRCOLARE: Configura i link prev/next per ogni pagina
     if (currentPage === 'home.html') {
       prevLink.href = 'consumption.html';
       nextLink.href = 'environment.html';

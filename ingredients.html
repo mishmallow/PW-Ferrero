@@ -1,3 +1,4 @@
+<!-- PAGINA INGREDIENTI: Struttura base identica alle altre sezioni -->
 <!DOCTYPE html>
 
 <html lang="it">
@@ -17,14 +18,17 @@
 <body>
 <main>
 <div class="page">
+  <!-- LAYOUT A DUE COLONNE: Immagine + Contenuto -->
     <div class="left-section">
+      <!-- IMMAGINE Fava di cacao per rappresentare gli ingredienti -->
       <img src="imgs/cocoa-bean.jpeg" alt="A cacao bean" class="main-image">
     </div>
-    
+    <!-- COLONNA DESTRA: Contenuto testuale e interattivo -->
     <div class="right-section right-section-ingredients">
+      <!-- TITOLO SEZIONE -->
       <h2 class="section-title">Approvvigionamento sostenibile degli ingredienti</h2>
       <div class="divider"></div>
-      
+      <!-- SEZIONE PUNTI CHIAVE: Lista dei temi principali -->
       <section class="achievements">
         <h3>Punti Chiave</h3>
         <ul class="achievement-list">
@@ -35,16 +39,18 @@
           <li>Trasparenza nella catena di fornitura</li>
         </ul>
       </section>
-      
+      <!-- SEZIONE ANALISI: Contenuto espandibile/comprimibile -->
       <section class="analisi">
+        <!-- Header con bottone toggle -->
         <div class="header-container">
         <h3>Analisi</h3>
-
+        <!-- Bottone per espandere/comprimere il testo -->
         <button class="btn toggle-btn" onclick="toggleParagraph()">
+          <!-- Indicatore visivo dello stato (freccia giù/su) -->
           <div class="toggle-text" id="toggleText">▼</div>
         </button>
         </div>
-
+        <!-- CONTENUTO NASCOSTO: Testo inizialmente nascosto -->
         <div id="hiddenText" class="hidden-paragraph">
         <p>
           Ferrero adotta un approccio mirato alla rigenerazione degli ecosistemi e alla tutela delle risorse naturali lungo le sue filiere agricole. <br>
@@ -71,7 +77,8 @@
           Ferrero dimostra un impegno solido e articolato nella gestione sostenibile degli ingredienti, con una visione che integra aspetti ambientali, sociali e di governance (ESG). <br>
           L’azienda non si limita a rispettare le normative, ma punta a guidare il cambiamento attraverso innovazione, trasparenza e collaborazioni strategiche. Questo modello di approvvigionamento garantisce non solo la qualità dei prodotti, ma contribuisce anche alla rigenerazione degli ecosistemi e al progresso delle comunità coinvolte.
         </p>
-                <script>
+        <!-- JAVASCRIPT INLINE: Funzioni per gestire l'espansione del testo -->
+        <script>
         function showParagraph() {
             const paragraph = document.getElementById('hiddenText');
             paragraph.classList.add('show');
@@ -80,22 +87,25 @@
         function toggleParagraph() {
             const paragraph = document.getElementById('hiddenText');
             const toggleText = document.getElementById('toggleText');
+            // Aggiunge/rimuove la classe 'show' per mostrare/nascondere
             paragraph.classList.toggle('show');
 
-            // Cambia il testo nel bottone
+            // Cambia l'icona del bottone in base allo stato
             if (paragraph.classList.contains('show')) {
-                toggleText.textContent = '▲';
+                toggleText.textContent = '▲';// Freccia su = espanso
             } else {
-                toggleText.textContent = '▼';
+                toggleText.textContent = '▼';// Freccia giù = compresso
             }
 
         }
         </script>
       </section>
-      
+      <!-- SEZIONE SDG: Obiettivi di Sviluppo Sostenibile -->
       <section class="sdgs">
         <h3>Come ci allineiamo agli Obiettivi di Sviluppo Sostenibile (SDG)</h3>
+        <!-- Container per le icone SDG -->
         <div class="sdg-icons">
+          <!-- Serie di icone rappresentanti gli SDG -->
           <img src="imgs/sdg-poverty.png" alt="SDG Poverty" class="sdg-icon">
           <img src="imgs/sdg-hunger.png" alt="SDG Hunger" class="sdg-icon">
           <img src="imgs/sdg-health.png" alt="SDG Health" class="sdg-icon">
@@ -109,15 +119,17 @@
           <img src="imgs/sdg-land.png" alt="SDG Life on Land" class="sdg-icon">
         </div>
       </section>
-      
+      <!-- SEZIONE DOWNLOAD: Link per scaricare il report completo -->
       <div class="download-section">
         <a href="downloads/environment-report.pdf" class="download-button">Download Report Completo</a>
       </div>
     </div>
   </div>
-  
+  <!-- NAVIGAZIONE TRA PAGINE: Menu fisso in fondo -->
   <nav class="page-navigation">
+    <!-- Link pagina precedente -->
     <a href="home.html" class="prev-page"><span class="arrow">←</span></a>
+    <!-- Menu centrale con tutte le pagine -->
     <div class="page-links">
       <a href="home.html">HOME</a>
       <a href="environment.html">AMBIENTE</a>
@@ -125,23 +137,25 @@
       <a href="people.html">PERSONE</a>
       <a href="consumption.html">CONSUMO</a>
     </div>
+    <!-- Link pagina successiva -->
     <a href="ingredients.html" class="next-page"><span class="arrow">→</span></a>
   </nav>
-
+  <!-- JAVASCRIPT: Gestione dinamica della navigazione -->
   <script>
+    // Ottiene il nome del file corrente dall'URL
     const currentPage = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('.page-links a');
-
+    // Evidenzia il link della pagina corrente
     navLinks.forEach(link => {
       if (link.getAttribute('href') === currentPage) {
         link.classList.add('active');
       }
     });
-
+    // Riferimenti ai bottoni prev/next
     const prevLink = document.querySelector('.prev-page');
     const nextLink = document.querySelector('.next-page');
     
-
+    // LOGICA NAVIGAZIONE CIRCOLARE: Configura i link prev/next per ogni pagina
     if (currentPage === 'home.html') {
       prevLink.href = 'consumption.html';
       nextLink.href = 'environment.html';
